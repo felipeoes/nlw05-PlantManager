@@ -26,7 +26,6 @@ export function Welcome() {
         Do not forget to water your plants. {"\n"}
         We take care of remembering you whenever it is necessary.
       </Text>
-
       <Button title=">" onPress={handleVisibility} />
     </SafeAreaView>
   );
