@@ -1,11 +1,19 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { Button } from "../components/Button";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
-export function Confirmation({route}: any) {
+export function Confirmation({ route }: any) {
+  const navigation = useNavigation();
   const name = route.params.name;
+
+  function handleOnPress() {
+    navigation.navigate("PlantSelect", {
+      name: name,
+    });
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -19,7 +27,7 @@ export function Confirmation({route}: any) {
         </Text>
 
         <View style={styles.footer}>
-          <Button title="Start" />
+          <Button title="Start" onPress={handleOnPress} />
         </View>
       </View>
     </SafeAreaView>
