@@ -10,7 +10,7 @@ export function Confirmation({ route }: any) {
   const name = route.params.name;
 
   function handleOnPress() {
-    navigation.navigate("PlantSelect", {
+    navigation.navigate("Home", {
       name: name,
     });
   }

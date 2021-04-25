@@ -6,7 +6,8 @@ import { SignIn } from "../pages/SignIn";
 import { Confirmation } from "../pages/Confirmation";
 
 import colors from "../styles/colors";
-import { PlantSelect } from "../pages/PlantSelect";
+import AuthRoutes from "./tab.routes";
+import { SavePlant } from "../pages/SavePlant";
 const stackRoutes = createStackNavigator();
 
 const AppRoutes: React.FC = () => (
@@ -24,7 +25,11 @@ const AppRoutes: React.FC = () => (
 
     <stackRoutes.Screen name="Confirmation" component={Confirmation} />
 
-    <stackRoutes.Screen name="PlantSelect" component={PlantSelect} />
+    <stackRoutes.Screen name="Home" component={AuthRoutes} />
+
+    <stackRoutes.Screen name="PlantSave" component={SavePlant} />
+
+    <stackRoutes.Screen name="MyPlants" component={AuthRoutes} />
   </stackRoutes.Navigator>
 );
 

@@ -15,10 +15,8 @@ interface EnvironmentProps {
   title: string;
 }
 
-export function PlantSelect({route}: any) {
+export function Home() {
   const navigation = useNavigation();
-  const username=  route.params.name;
-
   const [environments, setEnvironments] = useState<EnvironmentProps[]>([]);
   const [plants, setPlants] = useState<PlantProps[]>([]);
   const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>([]);
@@ -96,7 +94,7 @@ export function PlantSelect({route}: any) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Header username={username} />
+        <Header />
 
         <Text style={styles.title}>In which environment</Text>
         <Text style={styles.subtitle}>are you going to put your plant ?</Text>
@@ -117,7 +115,7 @@ export function PlantSelect({route}: any) {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.environmentList}
           ListHeaderComponent={<View />}
-          ListHeaderComponentStyle={{ marginRight: 32 }}
+          ListHeaderComponentStyle={{ marginRight: 5 }}
         />
       </View>
 

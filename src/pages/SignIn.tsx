@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from "@react-navigation/native";
 import {
   SafeAreaView,
@@ -10,10 +11,9 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
 } from "react-native";
-
 import { Button } from "../components/Button";
-
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
@@ -39,8 +39,9 @@ export function SignIn() {
   }
 
   function handleSubmit() {
+    if (!name) return Alert.alert("Please, type your name ");
     navigation.navigate("Confirmation", {
-      name: name
+      name: name,
     });
   }
 
